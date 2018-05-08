@@ -1,0 +1,17 @@
+/*Elements*/
+
+
+
+/*Classes*/
+
+.my-border {
+  border: 1px solid black;
+
+}
+
+/*IDs*/
+
+#my-list {
+  height:200px;
+}
+

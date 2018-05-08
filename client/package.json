@@ -7,6 +7,7 @@
     "dev": "DEBUG=client:* nodemon ./bin/www"
   },
   "dependencies": {
+    "@angular/router": "^6.0.0",
     "@types/bootstrap": "^4.1.0",
     "@types/jquery": "^3.3.1",
     "body-parser": "~1.18.2",
@@ -16,6 +17,7 @@
     "embed-video": "^2.0.4",
     "express": "~4.16.0",
     "hbs": "~4.0.1",
+    "microlinkjs": "^2.0.3",
     "mongoose": "~4.13.4",
     "morgan": "~1.9.0",
     "node-sass-middleware": "0.11.0",
