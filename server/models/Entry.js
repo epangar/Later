@@ -9,7 +9,11 @@ const entrySchema = new Schema(
     },
     titleFile: String, //Title
     comment: String,
-    enum: ["page", "image", "place"],
+    whichType: {
+      type: String,
+      enum: ["web", "article", "video", "image", "place", "other"],
+      required: [true, "Which type of link it is?"]
+    },
   },
   {
     timestamps: {
