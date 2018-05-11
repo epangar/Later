@@ -10,6 +10,8 @@ import { ListComponent } from './list/list.component';
 import { routes } from './routes'
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SessionService } from './services/session.service';
+import { HttpModule } from '@angular/http';
+
 
 
 @NgModule({
@@ -21,8 +23,9 @@ import { SessionService } from './services/session.service';
 ],
   imports: [
     BrowserModule,
+    HttpModule,
     RouterModule.forRoot(routes),
-    FormsModule,
+    FormsModule
   ],
   providers: [SessionService],
   bootstrap: [AppComponent]
