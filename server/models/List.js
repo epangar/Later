@@ -9,18 +9,11 @@ const listSchema = {
   //The list is an array of files
   type: Array,
   //The title
-  title : {
-    type: String,
-    enum: ["Your websites:", "Your articles:", "Your videos:", "Your images:", "Your places:", "Your songs:", "Random stuff:","Others:"],
-  },
+  title : String,
 
-  content: {
-    type: String,
-    enum: ["web", "article", "video", "image", "place", "songs", "random","other"],
-  },
   comment : String
 
 }
 
-const List = mongoose.model("List", entrySchema);
+const List = mongoose.model("List", listSchema);
 module.exports = List;

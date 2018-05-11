@@ -85,6 +85,8 @@ app.use("/", index);
 const authRouter = require("./routes/auth");
 app.use("/api/auth", authRouter);
 
+const list = require("./routes/list");
+app.use("/api/list", list);
 
 app.use(function(req, res) {
   res.sendfile(__dirname + '/public/index.html');
