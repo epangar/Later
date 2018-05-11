@@ -9,7 +9,10 @@ const listSchema = {
   //The list is an array of files
   type: Array,
   //The title
-  title : String,
+  title : {
+    type: String,
+    required: [true, "Add a title"]
+  },
 
   comment : String
 

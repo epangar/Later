@@ -88,6 +88,10 @@ app.use("/api/auth", authRouter);
 const list = require("./routes/list");
 app.use("/api/list", list);
 
+const entry = require("./routes/entry");
+app.use("/api/entry", entry);
+
+
 app.use(function(req, res) {
   res.sendfile(__dirname + '/public/index.html');
 });

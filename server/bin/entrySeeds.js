@@ -10,7 +10,7 @@ const entries = [
   {
     url: 'https://www.youtube.com/watch?v=w4Setx7VNzw',
     titleFile: 'Receta de tarta de queso', 
-    comment: 'Álvaro explica cómo hacer una tarta de queso',
+    comment: 'Zenchy explica cómo hacer una tarta de queso',
     whichType: 'video',
   },
   {
