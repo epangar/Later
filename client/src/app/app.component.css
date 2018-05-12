@@ -11,7 +11,9 @@
 
 /*IDs*/
 
-#my-list {
-  height:200px;
+#my-entry, #my-list {
+  height:100px;
+  width: 200px;
+  overflow: scroll;
 }
 

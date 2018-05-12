@@ -5,7 +5,9 @@
     "baseUrl": "./",
     "module": "es2015",
     "types": [
-      
+      "jquery",
+      "bootstrap",  
+      "node"
       
     ]
   },
