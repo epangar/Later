@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./entry.component.css']
 })
 export class EntryComponent implements OnInit {
-  lists: Array<any> = [];
+  entries: Array<any> = [];
 
   constructor(public sessionService: SessionService, public entryService: EntryService, public router: Router) { 
     if (!this.sessionService.user) {
@@ -19,6 +19,6 @@ export class EntryComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.entryService.getList().subscribe(p => this.lists = p);
+    this.entryService.getListOfEntries().subscribe(p => this.entries = p);
   }
 }

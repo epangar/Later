@@ -1,50 +1,79 @@
 <!DOCTYPE html>
+<h1> Later... </h1>
+<div *ngIf="!sessionService.user">
 
-<div style="text-align:center">
-  <h1>
-    Later...
-
-  </h1>
+  <app-login-form></app-login-form>
+  <h2>You're not logged in!</h2>
 </div>
 
-<div class="row dashboard-main-content-wrapper">
-  <div class="col-2">    
-    <h2>SAVE SOMETHING</h2>
-    <form id = "file-saver" >
-        <input type="text" placeholder="URL (required)">
-        <input type="text" placeholder="Comment (optional)">
-        <input type="submit" value="SAVE!">
-        <button class = "btn-danger">HI</button>
+<div *ngIf="sessionService.user">
+
+  <button (click)="sessionService.logout().subscribe()"> Logout </button>
+  <p>Welcome back.</p>
+
+  <div style="text-align:center">
+
+
+
+
+  </div>
+
+  <div class="row dashboard-main-content-wrapper">
+    <div class="col-4 my-border">
+      <h2>SAVE SOMETHING</h2>
+      <form id="file-saver">
+        <input type="text" placeholder="URL (required)" [(ngModel)]="newEntry.url">
+        <input type="text" placeholder="Title (optional)" [(ngModel)]="newEntry.titleFile">
+        <input type="text" placeholder="Comment (optional)" [(ngModel)]="newEntry.comment">
+        <input class="btn-danger" type="submit" value="SAVE!" (click)="createEntry()">
+        <!--  <select name="" id="">
+          <option value="" *ngFor="let l of lists" #></option>
+        </select>  -->
+
       </form>
-      
-  </div>
-  
-  <div class="col-2">
-    <h2>YOUR LISTS</h2>
-    <div id = "my-list" >
-    
 
     </div>
+
+    <div class="col-4 my-border">
+      <h2>YOUR LISTS</h2>
+      <!-- <form>
+          <div class="dropdown show">
+        
+              <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Create a new list!
+              </a>
+            
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <input type="text" placeholder="Name that list!" [(ngModel)]="newList.title">
+                  <input type="text" placeholder="Comment (optional)" [(ngModel)]="newList.comment">
+              </div>
+            </div>
+      </form> -->
+      <div id="my-lists">
+
+        <app-list></app-list>
+
+      </div>
+    </div>
+
+    <div class="col-4 my-border">
+      <h2>WHAT YOU SAVED HERE:</h2>
+
+      <div id="my-entries">
+        <app-entry></app-entry>
+
+      </div>
+    </div>
+
+
   </div>
 
-  <div class="col-2">
-    <h2>WHAT YOU SAVED HERE:</h2>
-    <div id = "my-entry" >
-    
+  <div class="row">
+    <div class="col-12">
+      <h2>TAKE A LOOK!</h2>
+      <div id="screen">
 
+      </div>
     </div>
   </div>
-
-  <div class="col-6">
-    <h2>TAKE A LOOK!</h2>
-    <div id="screen">
-      
-    </div>
-  </div>
-  
-</div>  
-
-<app-login-form></app-login-form>
-<app-list></app-list>
-<app-entry></app-entry>
-
+</div>

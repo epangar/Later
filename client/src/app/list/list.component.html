@@ -1,4 +1,10 @@
 <!doctype html>
-<p>
-  list works!
-</p>
+<div class="lists" *ngFor="let list of lists">
+  <p>......................................</p>
+  <h3>{{list.title}}</h3>
+  <p>{{list.comment}}</p>
+  <input class = "btn-success" type="submit" value="LOAD">
+  <input class = "btn-danger" type="submit" value="DELETE">
+
+</div>
+

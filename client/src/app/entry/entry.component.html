@@ -1,4 +1,11 @@
 <!doctype html>
-<p>
-  entry works!
-</p>
+<p>{{list.title}}</p>
+<div class="entries" *ngFor="let entry of entries">
+  <p>++++++++</p>
+  <h3>{{entry.titleFile}}</h3>
+  <p>{{entry.comment}}</p>
+  <a href = "{{entry.url}}" target="_blank"><input class = "btn-danger" type="submit" value="OPEN URL"></a>
+  <input class = "btn-success" type="submit" value="PREVIEW">
+  <input class = "btn-success" type="submit" value="DELETE THIS ENTRY" >
+
+</div>

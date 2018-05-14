@@ -9,11 +9,13 @@
 
 }
 
+
+
 /*IDs*/
 
-#my-entry, #my-list {
-  height:100px;
-  width: 200px;
+#my-entries, #my-lists {
+  height:300px;
+  width: auto;
   overflow: scroll;
 }
 
