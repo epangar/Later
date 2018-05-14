@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from './services/session.service';
 import { EntryService } from './services/entry.service';
+import { ListService } from './services/list.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,13 +11,18 @@ import { EntryService } from './services/entry.service';
 })
 export class AppComponent implements OnInit {
   title: string = 'Later';
+  newList : any = []
   newEntry: any = {};
 
-  constructor(public sessionService: SessionService, public entryService: EntryService) {
+  constructor(public sessionService: SessionService, public listService: ListService, public entryService: EntryService) {
   
   }
 
   ngOnInit() {}
+
+  createList() {
+    this.listService.createList(this.newList).subscribe();
+  }
 
   createEntry() {
     this.entryService.createEntry(this.newEntry).subscribe();

@@ -20,19 +20,19 @@ export class EntryService {
   }
 
   //READ ENTRY
-  get(id) {
+  getEntry(id) {
     return this.http.get(`${this.BASE_URL}/api/entry/${id}`)
       .map((res) => res.json());
   }
 
   //UPDATE ENTRY
-  edit(entry) {
+  editEntry(entry) {
     return this.http.put(`${this.BASE_URL}/api/entry/${entry.id}`, entry)
       .map((res) => res.json());
   }
 
   //DELETE ENTRY
-  remove(id) {
+  removeEntry(id) {
     return this.http.delete(`${this.BASE_URL}/api/entry/${id}`)
       .map((res) => res.json());
   }

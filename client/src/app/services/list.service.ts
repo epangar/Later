@@ -12,18 +12,27 @@ export class ListService {
     return this.http.get(`${this.BASE_URL}/api/list`)
       .map((res) => res.json());
   }
+  
+  //CREATE LIST
+  createList(list) {
+    return this.http.post(`${this.BASE_URL}/api/list`, list)
+      .map((res) => res.json());
+  }
 
+  //READ LIST
   get(id) {
     return this.http.get(`${this.BASE_URL}/api/list/${id}`)
       .map((res) => res.json());
   }
 
-  edit(list) {
+  //UPDATE LIST
+  editList(list) {
     return this.http.put(`${this.BASE_URL}/api/list/${list.id}`, list)
       .map((res) => res.json());
   }
 
-  remove(id) {
+  //DELETE LIST
+  removeList(id) {
     return this.http.delete(`${this.BASE_URL}/api/list/${id}`)
       .map((res) => res.json());
   }

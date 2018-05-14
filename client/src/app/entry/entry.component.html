@@ -4,8 +4,8 @@
   <p>++++++++</p>
   <h3>{{entry.titleFile}}</h3>
   <p>{{entry.comment}}</p>
-  <a href = "{{entry.url}}" target="_blank"><input class = "btn-danger" type="submit" value="OPEN URL"></a>
-  <input class = "btn-success" type="submit" value="PREVIEW">
-  <input class = "btn-success" type="submit" value="DELETE THIS ENTRY" >
+  <a href = "{{entry.url}}" target="_blank"><input class = "btn-success" type="submit" value="OPEN URL"></a>
+  <input class = "btn-info" type="submit" value="PREVIEW" (click)="getEntry()">
+  <input class = "btn-danger" type="submit" value="DELETE ENTRY" (click)="removeEntry()">
 
 </div>
