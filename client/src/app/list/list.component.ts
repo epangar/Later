@@ -11,14 +11,32 @@ import { Router } from '@angular/router';
 export class ListComponent implements OnInit {
   lists: Array<any> = [];
 
-  constructor(public sessionService: SessionService, public listService: ListService, public router: Router) { 
+  constructor(
+    public sessionService: SessionService, 
+    public listService: ListService, 
+    public router: Router) 
+    { 
     if (!this.sessionService.user) {
       this.router.navigate(['']);
     }
+    this.listService.listEvent.subscribe(l => {
+      this.lists = l;
+    })
     
   }
 
   ngOnInit() {
+    this.getLists();
+  }
+
+
+  getLists() {
     this.listService.getList().subscribe(p => this.lists = p);
+  }
+
+  //DELETE LIST
+  removeList(id) {
+    console.log(id)      
+    this.listService.removeList(id).subscribe(() => this.getLists());
   }
 }

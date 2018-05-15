@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListService } from '../services/list.service';
+import { SessionService } from '../services/session.service';
 
 @Component({
   selector: 'app-add-list',
@@ -10,7 +11,7 @@ export class AddListComponent implements OnInit {
   newList: any = {};
   lists: Array<any> = [];
 
-  constructor(public listService: ListService) {}
+  constructor(public listService: ListService, public sessionService: SessionService) {}
 
   ngOnInit() {
     this.listService.getList().subscribe(p => {
@@ -18,9 +19,13 @@ export class AddListComponent implements OnInit {
     });
   }
 
+  getLists() {
+    this.listService.getList().subscribe(p => this.lists = p);
+  }
 
+  //CREATE LIST
   createList() {
-    console.log(this.newList)
-    this.listService.createList(this.newList).subscribe();
+    this.newList.userId = this.sessionService.user;
+    this.listService.createList(this.newList).subscribe(() => this.getLists());  
   }
 }

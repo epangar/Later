@@ -17,6 +17,10 @@ export class AddEntryComponent implements OnInit {
     this.listService.getList().subscribe(p => {
       this.lists = p;
     });
+    this.listService.listEvent.subscribe(l => {
+      this.lists2 = l;
+      this.lists2.shift();
+    })
   }
 
   ngOnInit() {
@@ -26,7 +30,9 @@ export class AddEntryComponent implements OnInit {
     });
   }
   
-  createEntry() {
+  createEntry(list) {
+    console.log(list)
+    this.newEntry.listId = list;
     this.entryService.createEntry(this.newEntry).subscribe();
   }
 }

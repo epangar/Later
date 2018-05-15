@@ -4,8 +4,9 @@
   <p>++++++++</p>
   <h5>{{entry.titleFile}}</h5>
   <p>{{entry.comment}}</p>
-  <a href = "{{entry.url}}" target="_blank"><input class = "btn-success" type="submit" value="OPEN URL"></a>
+  <p>{{entry.listId}}</p>
+  <a href = "{{entry.url}}" target="_blank"><input class = "btn-success" type="submit" value="OPEN"></a>
   <input class = "btn-info" type="submit" value="PREVIEW" (click)="getEntry()">
-  <input class = "btn-danger" type="submit" value="DELETE ENTRY" (click)="removeEntry()">
+  <input class = "btn-danger" type="submit" value="DELETE" (click)="removeEntry(entry._id)">
 
 </div>

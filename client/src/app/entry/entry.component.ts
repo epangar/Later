@@ -19,6 +19,16 @@ export class EntryComponent implements OnInit {
   }
 
   ngOnInit() {
+  this.getEntries();
+  }
+
+  getEntries() {
     this.entryService.getListOfEntries().subscribe(p => this.entries = p);
   }
+
+  //DELETE ENTRY
+  removeEntry(id) {
+    console.log(id)
+    this.entryService.removeEntry(id).subscribe(p => this.getEntries())
+    }
 }

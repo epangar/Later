@@ -3,8 +3,9 @@
   <p>......................................</p>
   <h3>{{list.title}}</h3>
   <p>{{list.comment}}</p>
+  <p>{{list.userId}}</p>
   <input class = "btn-success" type="submit" value="LOAD LIST" (click)="getList()">
-  <input class = "btn-danger" type="submit" value="DELETE LIST" (click)="removeList()">
+  <input class = "btn-danger" type="submit" value="DELETE LIST" (click)="removeList(list._id)">
 
 </div>
 

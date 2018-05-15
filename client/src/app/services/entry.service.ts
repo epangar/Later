@@ -8,7 +8,7 @@ export class EntryService {
 
   constructor(public http: Http) { }
   
-   //GET ALL THE ENTRIES
+  //GET ALL THE ENTRIES
   getListOfEntries() {
     return this.http.get(`${this.BASE_URL}/api/entry`)
       .map((res) => res.json());
@@ -34,6 +34,7 @@ export class EntryService {
 
   //DELETE ENTRY
   removeEntry(id) {
+    console.log(id)
     return this.http.delete(`${this.BASE_URL}/api/entry/${id}`)
       .map((res) => res.json());
   }

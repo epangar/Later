@@ -9,11 +9,7 @@
 <div *ngIf="sessionService.user">
 
   <button (click)="sessionService.logout().subscribe()"> Logout </button>
-
-  <div style="text-align:center">
-
-
-  </div>
+  <p>Welcome, {{sessionService.user.username}}</p>
 
   <div class="row dashboard-main-content-wrapper">
     <div class="col-4 my-border">
