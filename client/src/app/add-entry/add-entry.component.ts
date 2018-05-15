@@ -19,14 +19,14 @@ export class AddEntryComponent implements OnInit {
     });
     this.listService.listEvent.subscribe(l => {
       this.lists2 = l;
-      this.lists2.shift();
+      //this.lists2.shift();
     })
   }
 
   ngOnInit() {
     this.listService.getList().subscribe(q => {
       this.lists2 = q;
-      this.lists2.shift();
+      //this.lists2.shift();
     });
   }
   
