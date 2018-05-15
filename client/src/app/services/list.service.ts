@@ -8,6 +8,7 @@ export class ListService {
 
   constructor(public http: Http) { }
 
+  //GET ALL THE LISTS
   getList() {
     return this.http.get(`${this.BASE_URL}/api/list`)
       .map((res) => res.json());

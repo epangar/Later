@@ -9,61 +9,24 @@
 <div *ngIf="sessionService.user">
 
   <button (click)="sessionService.logout().subscribe()"> Logout </button>
-  <p>Welcome back.</p>
 
   <div style="text-align:center">
-
-
 
 
   </div>
 
   <div class="row dashboard-main-content-wrapper">
     <div class="col-4 my-border">
-      <h2>SAVE SOMETHING!</h2>
-      <form id="file-saver">
-        <input type="text" placeholder="URL (required)" [(ngModel)]="newEntry.url">
-        <input type="text" placeholder="Title (optional)" [(ngModel)]="newEntry.titleFile">
-        <input type="text" placeholder="Comment (optional)" [(ngModel)]="newEntry.comment">
-        <input class="btn-success" type="submit" value="SAVE!" (click)="createEntry()">
-        
-        <select *ngFor="let l of lists" >
-          <option> {{ list.title }} </option>
-        </select>  
       
-
-<!--   <select>
-          <option value= "1" >Volvo</option>
-          <option value= "2" >Saab</option>
-          <option value= "3" >Opel</option>
-          <option value= "4" >Audi</option>
-        </select> -->
-
-      </form>
+      <app-add-entry></app-add-entry>
+      <app-add-list></app-add-list>
 
     </div>
 
     <div class="col-4 my-border">
       <h2>YOUR LISTS</h2>
 
-
-
-
-
-      <!-- <form>
-          <div class="dropdown show">
-        
-              <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Create a new list!
-              </a>
-            
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <input type="text" placeholder="Name that list!" [(ngModel)]="newList.title">
-                  <input type="text" placeholder="Comment (optional)" [(ngModel)]="newList.comment">
-                  <input class="btn-danger" type="submit" value="CREATE LIST!" (click)="createList()">
-              </div>
-            </div>
-      </form> -->
+      
       <div id="my-lists">
 
         <app-list></app-list>

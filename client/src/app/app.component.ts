@@ -12,7 +12,7 @@ import { ListService } from './services/list.service';
 export class AppComponent implements OnInit {
   title: string = 'Later';
   newList : any = []
-  newEntry: any = {};
+  
 
   constructor(public sessionService: SessionService, public listService: ListService, public entryService: EntryService) {
   
@@ -24,7 +24,5 @@ export class AppComponent implements OnInit {
     this.listService.createList(this.newList).subscribe();
   }
 
-  createEntry() {
-    this.entryService.createEntry(this.newEntry).subscribe();
-  }
+  
 }

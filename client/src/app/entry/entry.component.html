@@ -1,8 +1,8 @@
 <!doctype html>
-<p>{{list.title}}</p>
+
 <div class="entries" *ngFor="let entry of entries">
   <p>++++++++</p>
-  <h3>{{entry.titleFile}}</h3>
+  <h5>{{entry.titleFile}}</h5>
   <p>{{entry.comment}}</p>
   <a href = "{{entry.url}}" target="_blank"><input class = "btn-success" type="submit" value="OPEN URL"></a>
   <input class = "btn-info" type="submit" value="PREVIEW" (click)="getEntry()">

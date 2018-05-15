@@ -8,6 +8,11 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
+    "types": [
+      "jquery",
+      "bootstrap",
+      "node"
+    ],
     "typeRoots": [
       "node_modules/@types"
     ],

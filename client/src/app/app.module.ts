@@ -13,6 +13,8 @@ import { routes } from './routes'
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SessionService } from './services/session.service';
 import { HttpModule } from '@angular/http';
+import { AddEntryComponent } from './add-entry/add-entry.component';
+import { AddListComponent } from './add-list/add-list.component';
 
 
 
@@ -21,7 +23,9 @@ import { HttpModule } from '@angular/http';
     AppComponent,
     EntryComponent,
     ListComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    AddEntryComponent,
+    AddListComponent
 ],
   imports: [
     BrowserModule,

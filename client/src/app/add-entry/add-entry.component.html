@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<h2>SAVE SOMETHING!</h2>
+
+  <input type="text" placeholder="URL (required)" [(ngModel)]="newEntry.url" name="url">
+  <input type="text" placeholder="Title (optional)" [(ngModel)]="newEntry.titleFile" name="titleFile">
+  <input type="text" placeholder="Comment (optional)" [(ngModel)]="newEntry.comment" name="comment">
+  
+  <h5>SAVE TO:</h5>
+  <select class="custom-select">
+    <option selected>{{ lists[0].title }}</option>
+    <option *ngFor="let l of lists2" value="{{ l.title }}"> {{ l.title }} </option>
+  </select>
+
+ 
+
+  <input class="btn-success" type="submit" value="SAVE THIS ENTRY!" (click)="createEntry()">
+  
+

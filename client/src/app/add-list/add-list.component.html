@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<br>
+<input type="text" placeholder="Title of the list(required)" [(ngModel)]="newList.title" name="title">
+<input type="text" placeholder="Comments (optional)" [(ngModel)]="newList.comment" name="comment">
+
+
+<input class="btn-info" type="submit" value="CREATE A NEW LIST!" (click)="createList()">
