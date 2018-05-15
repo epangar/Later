@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListService } from '../services/list.service';
+import { EntryService } from '../services/entry.service';
 import { SessionService } from '../services/session.service';
 import { Router } from '@angular/router';
 
@@ -10,10 +11,12 @@ import { Router } from '@angular/router';
 })
 export class ListComponent implements OnInit {
   lists: Array<any> = [];
+  entries: any;
 
   constructor(
     public sessionService: SessionService, 
     public listService: ListService, 
+    public entryService: EntryService, 
     public router: Router) 
     { 
     if (!this.sessionService.user) {
@@ -32,6 +35,12 @@ export class ListComponent implements OnInit {
 
   getLists() {
     this.listService.getList().subscribe(p => this.lists = p);
+  }
+
+  getEntries(id) {
+    this.entryService.getListOfEntries(id).subscribe(p => {
+      console.log(p)
+      this.entryService.entries = p});
   }
 
   //DELETE LIST

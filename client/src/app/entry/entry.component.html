@@ -1,12 +1,13 @@
 <!doctype html>
 
-<div class="entries" *ngFor="let entry of entries">
+<div class="entries" *ngFor="let entry of entryService.entries">
   <p>++++++++</p>
-  <h5>{{entry.titleFile}}</h5>
+  <strong><h5>{{entry.titleFile}}</h5></strong>
   <p>{{entry.comment}}</p>
-  <p>{{entry.listId}}</p>
+  <p>Lista: {{entry.listId}}</p>
+  <p>Entrada: {{entry._id}}</p>
   <a href = "{{entry.url}}" target="_blank"><input class = "btn-success" type="submit" value="OPEN"></a>
-  <input class = "btn-info" type="submit" value="PREVIEW" (click)="getEntry()">
+  <input class = "btn-info" type="submit" value="PREVIEW" (click)="getEntry(entry._id)">
   <input class = "btn-danger" type="submit" value="DELETE" (click)="removeEntry(entry._id)">
 
 </div>

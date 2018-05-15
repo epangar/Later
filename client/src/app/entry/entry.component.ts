@@ -11,7 +11,10 @@ import { Router } from '@angular/router';
 export class EntryComponent implements OnInit {
   entries: Array<any> = [];
 
-  constructor(public sessionService: SessionService, public entryService: EntryService, public router: Router) { 
+  constructor(
+    public sessionService: SessionService, 
+    public entryService: EntryService, 
+    public router: Router) { 
     if (!this.sessionService.user) {
       this.router.navigate(['']);
     }
@@ -19,16 +22,16 @@ export class EntryComponent implements OnInit {
   }
 
   ngOnInit() {
-  this.getEntries();
+  //this.getEntries();
   }
 
-  getEntries() {
-    this.entryService.getListOfEntries().subscribe(p => this.entries = p);
-  }
+   getEntries(id) {
+    this.entryService.getListOfEntries(id).subscribe(p => this.entries = p);
+  } 
 
   //DELETE ENTRY
-  removeEntry(id) {
+   removeEntry(id) {
     console.log(id)
-    this.entryService.removeEntry(id).subscribe(p => this.getEntries())
-    }
+    this.entryService.removeEntry(id).subscribe(p => this.getEntries(id))
+    } 
 }

@@ -5,12 +5,13 @@ import { Http } from '@angular/http';
 @Injectable()
 export class EntryService {
   BASE_URL: string = 'http://localhost:3000';
+  entries : any;
 
   constructor(public http: Http) { }
   
   //GET ALL THE ENTRIES
-  getListOfEntries() {
-    return this.http.get(`${this.BASE_URL}/api/entry`)
+  getListOfEntries(id) {
+    return this.http.get(`${this.BASE_URL}/api/entry/objects/${id}`)
       .map((res) => res.json());
   }
 
