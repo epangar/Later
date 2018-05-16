@@ -1,5 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Http } from '@angular/http';
+import { SessionService } from './session.service';
 
 
 @Injectable()
@@ -8,26 +9,33 @@ export class ListService {
   lists: Array<any>;
   listEvent: EventEmitter<any> = new EventEmitter;
 
-  constructor(public http: Http) { }
+  constructor(public http: Http, public sessionService: SessionService) { 
+    this.getMyLists(this.sessionService.user._id).subscribe(l => this.lists = l);
+  }
 
   //GET ALL THE LISTS
-  getList() {
-    return this.http.get(`${this.BASE_URL}/api/list`)
-      .map((res) => res.json());
-  }
+  // getList() {
+  //   return this.http.get(`${this.BASE_URL}/api/list`)
+  //     .map((res) => res.json());
+  // }
 
   //GET LISTS BY USER
   getMyLists(id) {
     return this.http.get(`${this.BASE_URL}/api/list/mylists/${id}`)
-    .map((res) => res.json());
+    .map((res) => {
+      this.listEvent.emit(this.lists);
+      //this.lists = res.json();
+      return res.json();
+    });
   }
   
   //CREATE LIST
   createList(list) {
     return this.http.post(`${this.BASE_URL}/api/list`, list)
       .map((res) => {
-        res.json();
-        this.getList().subscribe( r => {
+        this.getMyLists(this.sessionService.user._id).subscribe( r => {
+          console.log('list service')
+          console.log(r)
           this.lists = r;
           this.listEvent.emit(this.lists);
         });        

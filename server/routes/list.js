@@ -2,6 +2,7 @@ const express = require("express");
 const _ = require("lodash");
 const router = express.Router();
 const List = require("../models/List");
+const Entry = require("../models/Entry");
 
 const fields = Object.keys(_.omit(List.schema.paths, ["__v", "_id"]));
 
@@ -46,7 +47,7 @@ router.delete("/:id", (req, res, next) => {
 // Retrive by UserId
 router.get("/mylists/:id", (req, res, next) => {
   console.log(req.params.id)
-  Entry.find({userId: req.params.id })
+  List.find({userId: req.params.id })
     .then(entry => res.status(200).json(entry))
     .catch(e => next(e));
 });

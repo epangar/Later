@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EntryService } from '../services/entry.service';
 import { ListService } from '../services/list.service';
+import { SessionService } from '../services/session.service';
 
 @Component({
   selector: 'app-add-entry',
@@ -8,13 +9,13 @@ import { ListService } from '../services/list.service';
   styleUrls: ['./add-entry.component.css']
 })
 export class AddEntryComponent implements OnInit {
-  newEntry: any = {};
+  newEntry: any = {url:"", titleFile:"", comment:""};
   lists: Array<any> = [];
   lists2: Array<any> = [];
 
 
-  constructor(public entryService: EntryService, public listService: ListService) { 
-    this.listService.getList().subscribe(p => {
+  constructor(public entryService: EntryService, public listService: ListService, public sessionService: SessionService) { 
+    this.listService.getMyLists(this.sessionService.user._id).subscribe(p => {
       this.lists = p;
     });
     this.listService.listEvent.subscribe(l => {
@@ -24,7 +25,7 @@ export class AddEntryComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.listService.getList().subscribe(q => {
+    this.listService.getMyLists(this.sessionService.user._id).subscribe(q => {
       this.lists2 = q;
       //this.lists2.shift();
     });

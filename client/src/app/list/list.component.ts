@@ -29,12 +29,14 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getMyLists(this.sessionService.user._id);
-  }
+    this.listService.getMyLists(this.sessionService.user._id).subscribe(q => {
+      this.lists = q;
+    });
+   }
 
 
   getMyLists(id) {
-    this.listService.getList().subscribe(p => this.lists = p);
+    this.listService.getMyLists(id).subscribe(p => this.lists = p);
   }
 
   getEntries(id) {

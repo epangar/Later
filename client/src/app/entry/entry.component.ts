@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./entry.component.css']
 })
 export class EntryComponent implements OnInit {
-  entries: Array<any> = [];
+  listId;
 
   constructor(
     public sessionService: SessionService, 
@@ -17,21 +17,18 @@ export class EntryComponent implements OnInit {
     public router: Router) { 
     if (!this.sessionService.user) {
       this.router.navigate(['']);
-    }
-    
+    }    
   }
 
-  ngOnInit() {
-  //this.getEntries();
-  }
-
-   getEntries(id) {
-    this.entryService.getListOfEntries(id).subscribe(p => this.entries = p);
-  } 
+  ngOnInit() { }
 
   //DELETE ENTRY
    removeEntry(id) {
-    console.log(id)
-    this.entryService.removeEntry(id).subscribe(p => this.getEntries(id))
-    } 
+    this.listId = this.entryService.entries[0].listId;
+    this.entryService.removeEntry(id).subscribe(() => {
+      this.entryService.getListOfEntries(this.listId).subscribe(p => {
+        this.entryService.entries = p
+      });
+    }) 
+  }
 }
