@@ -15,6 +15,12 @@ export class ListService {
     return this.http.get(`${this.BASE_URL}/api/list`)
       .map((res) => res.json());
   }
+
+  //GET LISTS BY USER
+  getMyLists(id) {
+    return this.http.get(`${this.BASE_URL}/api/list/mylists/${id}`)
+    .map((res) => res.json());
+  }
   
   //CREATE LIST
   createList(list) {

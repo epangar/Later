@@ -45,7 +45,7 @@ router.delete("/:id", (req, res, next) => {
 });
 
 
- // Retrive by ListId
+// Retrive by ListId
 router.get("/objects/:id", (req, res, next) => {
   console.log(req.params.id)
   Entry.find({listId:req.params.id})

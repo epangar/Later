@@ -9,7 +9,7 @@ export class EntryService {
 
   constructor(public http: Http) { }
   
-  //GET ALL THE ENTRIES
+  //GET ALL THE ENTRIES BY LIST
   getListOfEntries(id) {
     return this.http.get(`${this.BASE_URL}/api/entry/objects/${id}`)
       .map((res) => res.json());

@@ -43,4 +43,12 @@ router.delete("/:id", (req, res, next) => {
     .catch(e => next(e));
 });
 
+// Retrive by UserId
+router.get("/mylists/:id", (req, res, next) => {
+  console.log(req.params.id)
+  Entry.find({userId: req.params.id })
+    .then(entry => res.status(200).json(entry))
+    .catch(e => next(e));
+});
+
 module.exports = router;

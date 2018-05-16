@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from '../services/session.service';
+import { EntryService } from '../services/entry.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-screen',
@@ -6,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./screen.component.css']
 })
 export class ScreenComponent implements OnInit {
+  entry: any;
 
-  constructor() { }
+  constructor(
+    public sessionService: SessionService, 
+    public entryService: EntryService, 
+    public router: Router) { }
 
   ngOnInit() {
   }
 
+  getEntry(id) {
+    this.entryService.getEntry(id).subscribe(p => this.entry = p);
+    console.log(this.entry)
+  }
 }
