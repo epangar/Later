@@ -1,0 +1,18 @@
+@viewport{
+  zoom: 1.0;
+  width: extend-to-zoom;
+}
+
+* {
+font-family: Lato;
+}
+
+a {
+color: darkblue;
+}
+
+.mapa{
+
+width:100%;
+height:300px
+}
