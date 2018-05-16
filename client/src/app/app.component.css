@@ -19,3 +19,7 @@
   overflow: scroll;
 }
 
+#screen {
+  height:300px;
+  width: auto;
+}

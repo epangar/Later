@@ -29,23 +29,21 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getLists();
+    this.getMyLists();
   }
 
 
-  getLists() {
+  getMyLists() {
     this.listService.getList().subscribe(p => this.lists = p);
   }
 
   getEntries(id) {
     this.entryService.getListOfEntries(id).subscribe(p => {
-      console.log(p)
       this.entryService.entries = p});
   }
 
   //DELETE LIST
   removeList(id) {
-    console.log(id)      
-    this.listService.removeList(id).subscribe(() => this.getLists());
+    this.listService.removeList(id).subscribe(() => this.getMyLists());
   }
 }

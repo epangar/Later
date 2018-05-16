@@ -19,13 +19,13 @@ export class AddListComponent implements OnInit {
     });
   }
 
-  getLists() {
+  getMyLists() {
     this.listService.getList().subscribe(p => this.lists = p);
   }
 
   //CREATE LIST
   createList() {
     this.newList.userId = this.sessionService.user;
-    this.listService.createList(this.newList).subscribe(() => this.getLists());  
+    this.listService.createList(this.newList).subscribe(() => this.getMyLists());  
   }
 }

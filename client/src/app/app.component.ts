@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   
   }
 
-  ngOnInit() {}
+  ngOnInit() {  }
 
   createList() {
     this.listService.createList(this.newList).subscribe();

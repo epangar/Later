@@ -14,8 +14,7 @@ const entrySchema = new Schema(
     comment: String,
     whichType: {
       type: String,
-      enum: ["web", "article", "video", "image", "place", "random","other"],
-      required: [true, "Which type of link it is?"]
+      enum: ["web", "article", "video", "image", "place", "random","other"]
     },
     read: {
       type: Boolean,

@@ -15,6 +15,7 @@ import { SessionService } from './services/session.service';
 import { HttpModule } from '@angular/http';
 import { AddEntryComponent } from './add-entry/add-entry.component';
 import { AddListComponent } from './add-list/add-list.component';
+import { ScreenComponent } from './screen/screen.component';
 
 
 
@@ -25,7 +26,8 @@ import { AddListComponent } from './add-list/add-list.component';
     ListComponent,
     LoginFormComponent,
     AddEntryComponent,
-    AddListComponent
+    AddListComponent,
+    ScreenComponent
 ],
   imports: [
     BrowserModule,
