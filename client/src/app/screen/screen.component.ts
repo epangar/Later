@@ -19,8 +19,5 @@ export class ScreenComponent implements OnInit {
   ngOnInit() {
   }
 
-  getPreview(id) {
-    this.entryService.getEntry(id).subscribe(p => this.entry = p);
-    console.log("Imprimir el preview" + this.entry)
-  }
+
 }

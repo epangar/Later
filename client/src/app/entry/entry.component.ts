@@ -20,7 +20,9 @@ export class EntryComponent implements OnInit {
     }    
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    
+  }
 
   //DELETE ENTRY
    removeEntry(id) {

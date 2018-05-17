@@ -46,6 +46,6 @@ export class ListComponent implements OnInit {
 
   //DELETE LIST
   removeList(id) {
-    this.listService.removeList(id).subscribe(() => this.getMyLists(id));
+    this.listService.removeList(id).subscribe(() => this.getMyLists(this.sessionService.user._id));
   }
 }

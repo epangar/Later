@@ -7,8 +7,7 @@
   
   <h5>SAVE TO:</h5>
   <select class="custom-select" #list>
-    <option selected>{{ lists[0].title }}</option>
-    <option *ngFor="let l of lists2" value="{{ l._id }}"> {{ l.title }} </option>
+    <option *ngFor="let l of lists" value="{{ l._id }}"> {{ l.title }} </option>
   </select>
 
  

@@ -43,7 +43,23 @@ export class MapComponent implements OnInit {
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
 
 
+    /*PINTAR EL PUNTERO
+    
+  function getCoord(url) {
+  
+
+  var splitUrl = url.split('@');
+  var coords = splitUrl[1].split(',');
+
+  var lat = coords[0]; // 12.974267
+  var lng = coords[1]; // 80.2238546
+
+}
+*/ 
+    
 
   
+
+
   }
 }

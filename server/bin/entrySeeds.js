@@ -42,6 +42,27 @@ const entries = [
     titleFile: '', 
     comment: '',
     whichType: 'article',    
+  },
+  {
+    listId: "5afb2302a3e66d0df473c517",
+    url: "https://www.google.es/maps/place/@40.4169473,-3.7057172,17z",
+    titleFile: "Puerta del Sol",
+    comment: "Buen lugar para pasear",
+    whichType: "place",
+  },
+  {
+    listId: "5afb2302a3e66d0df473c517",
+    url: "https://www.google.es/maps/place/@40.4183042,-3.698722,17z/",
+    titleFile: "Círculo de Bellas Artes",
+    comment: "Exposiciones y una azotea agradable",
+    whichType: "place",
+  },
+  {
+    listId: "5afb2302a3e66d0df473c517",
+    url: "https://www.google.es/maps/@40.4080326,-3.693607,14z",
+    titleFile: "Parque del Retiro",
+    comment: "Buen sitio para salir a correr",
+    whichType: "place",
   }
 ];
 

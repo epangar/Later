@@ -19,6 +19,7 @@ export class AddListComponent implements OnInit {
   //CREATE LIST
   createList() {
     this.newList.userId = this.sessionService.user;
-    this.listService.createList(this.newList).subscribe();  
+    this.listService.createList(this.newList).subscribe(()=>
+      this.newList = {title:"", comment:""});  
   }
 }

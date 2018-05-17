@@ -57,7 +57,11 @@ export class ListService {
   //DELETE LIST
   removeList(id) {
     return this.http.delete(`${this.BASE_URL}/api/list/${id}`)
-      .map((res) => res.json());
+      .map((res) => {
+        console.log(this.sessionService.user._id)
+        this.getMyLists(this.sessionService.user._id).subscribe();
+        return res.json()
+      });
   }
 
 }
