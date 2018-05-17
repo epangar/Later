@@ -24,7 +24,6 @@ export class ScreenComponent implements OnInit {
     this.clicked = true;
     this.entryService.getEntry(id).subscribe(p => {
       this.entryService.preview = p;
-      console.log("ENTRADA "+id);
     });
   }
   

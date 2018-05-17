@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Address } from 'angular-google-place';
 import { SessionService } from '../services/session.service';
+import { EntryService } from '../services/entry.service';
 import { Router } from '@angular/router';
 import { ViewChild } from "@angular/core";
 import {} from "@types/googlemaps";
@@ -43,7 +44,7 @@ export class MapComponent implements OnInit {
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
 
 
-    /*PINTAR EL PUNTERO / Centrar
+    /*OBTENER LATITUD Y LONGITUD DE LA URL
     
   function getCoord(url) {
   
