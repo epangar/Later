@@ -1,7 +1,13 @@
 <!DOCTYPE html>
-<br>
-<input type="text" placeholder="Title of the list(required)" [(ngModel)]="newList.title" name="title">
-<input type="text" placeholder="Comments (optional)" [(ngModel)]="newList.comment" name="comment">
+<h5>CREATE A NEW LIST!</h5>
 
+<div class="row dashboard-main-content-wrapper">
+  <div class="col-10">
+    <input class="form-control half" type="text" placeholder="Title of the list(required)" [(ngModel)]="newList.title" name="title">
+  </div>  
+  <div class="col-10 ">
+    <input class="form-control half" type="text" placeholder="Comments (optional)" [(ngModel)]="newList.comment" name="comment">
+  </div>
+</div>
 
-<input class="btn-info" type="submit" value="CREATE A NEW LIST!" (click)="createList()">
+<input class="btn-sm btn-info" type="submit" value="CREATE A NEW LIST!" (click)="createList()">

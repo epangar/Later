@@ -1,12 +1,9 @@
 <!doctype html>
-<div class="lists" *ngFor="let list of lists">
-  <p>......................................</p>
+<div class="lists" *ngFor="let list of lists" id="list">
   <h3>{{list.title}}</h3>
   <p>{{list.comment}}</p>
-  <p>Usuario: {{list.userId}}</p>
-  <p>Lista: {{list._id}}</p>
-  <input class = "btn-success" type="submit" value="OPEN" (click)="getEntries(list._id)">
-  <input class = "btn-danger" type="submit" value="DELETE" (click)="removeList(list._id)">
+  <input class = "btn btn-success" type="submit" value="OPEN" (click)="getEntries(list._id)">
+  <input class = "btn btn-danger" type="submit" value="DELETE" (click)="removeList(list._id)">
 
 </div>
 

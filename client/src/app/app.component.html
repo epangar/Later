@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<h1 id = "later"> Later... </h1>
+<h1 id="later" class="autocenter"> Later... </h1>
 <div *ngIf="!sessionService.user">
 
   <app-login-form></app-login-form>
@@ -8,19 +8,19 @@
 
 <div *ngIf="sessionService.user">
 
-  <div class="row dashboard-main-content-wrapper">
-      <div class="col-9 ">
-          
+  <div class="row dashboard-main-content-wrapper" id="login">
+    <div class="col-9 ">
 
-      </div>
-      
-      <div class="col-2 ">
-          <p>Welcome, {{sessionService.user.username}}</p>
 
-      </div>
-      <div class="col-1 ">
-          <button (click)="sessionService.logout().subscribe()"> Logout </button>
-      </div>
+    </div>
+
+    <div class="col-2 ">
+      <p>Welcome, {{sessionService.user.username}}</p>
+
+    </div>
+    <div class="col-1 ">
+      <button (click)="sessionService.logout().subscribe()"> Logout </button>
+    </div>
 
 
   </div>
@@ -35,10 +35,10 @@
     </div>
 
     <div class="col-3 my-border">
-      <h2>YOUR LISTS</h2>
+      <h2 class="autocenter">YOUR LISTS</h2>
 
 
-      <div id="my-lists">
+      <div id="my-lists" class="autocenter">
 
         <app-list></app-list>
 
@@ -46,21 +46,18 @@
     </div>
 
     <div class="col-4 my-border">
-      <h2>WHAT YOU SAVED HERE:</h2>
+      <h2 class="autocenter">WHAT YOU SAVED HERE:</h2>
 
-      <div id="my-entries">
+      <div id="my-entries" class="autocenter">
         <app-entry></app-entry>
 
       </div>
     </div>
-
-
   </div>
 
+  <h2 class="autocenter" id="takeALook">TAKE A LOOK!</h2>
   <div class="row">
     <div class="col-12">
-        <h2 id="takeALook">TAKE A LOOK!</h2>
-
       <!-- SCREEN -->
       <app-screen></app-screen>
       <!-- <app-map></app-map> -->

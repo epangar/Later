@@ -54,6 +54,7 @@ export class MapComponent implements OnInit {
   var lat = coords[0]; // 12.974267
   var lng = coords[1]; // 80.2238546
 
+  return [lat,lng]
 }
 */ 
     

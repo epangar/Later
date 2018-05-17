@@ -6,10 +6,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-entry',
   templateUrl: './entry.component.html',
-  styleUrls: ['./entry.component.css']
+  styleUrls: ['./entry.component.css'],
+  template: `<iframe [src]="url"></iframe>`
 })
 export class EntryComponent implements OnInit {
   listId;
+  url = this.entryService.entry.url;
 
   constructor(
     public sessionService: SessionService, 

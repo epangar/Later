@@ -9,32 +9,28 @@
 
 }
 
-
+.autocenter {
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
 
 /*IDs*/
 
 #later{
-background-color: red;
-color: white;
-width: 130px;
-
-border: 1px brown solid;
-margin-left: auto;
-margin-right: auto;
+  background-color: red;
+  color: white;
+  width: 130px;
+  border: 1px brown solid;
+  border-radius: 15px;
 }
 
 #my-entries, #my-lists {
   height:300px;
   width: auto;
   overflow: scroll;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-#takeALook {
-  margin-left: auto;
-  margin-right: auto;
-}
 #screen {
   height:300px;
   width: auto;

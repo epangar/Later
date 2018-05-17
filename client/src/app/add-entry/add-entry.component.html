@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <h2>SAVE SOMETHING!</h2>
 
-  <input type="text" placeholder="URL (required)" [(ngModel)]="newEntry.url" name="url">
-  <input type="text" placeholder="Title (optional)" [(ngModel)]="newEntry.titleFile" name="titleFile">
-  <input type="text" placeholder="Comment (optional)" [(ngModel)]="newEntry.comment" name="comment">
+  <input class="form-control half" type="text" placeholder="URL (required)" [(ngModel)]="newEntry.url" name="url">
+  <input class="form-control half" type="text" placeholder="Title (optional)" [(ngModel)]="newEntry.titleFile" name="titleFile">
+  <input class="form-control half" type="text" placeholder="Comment (optional)" [(ngModel)]="newEntry.comment" name="comment">
   
   <h5>SAVE TO:</h5>
-  <select class="custom-select" #list>
+  <select class="custom-select half" #list>
     <option *ngFor="let l of lists" value="{{ l._id }}"> {{ l.title }} </option>
   </select>
 
  
 
-  <input class="btn-success" type="submit" value="SAVE THIS ENTRY!" (click)="createEntry(list.value)">
+  <input class="btn-sm btn-success" type="submit" value="SAVE THIS ENTRY!" (click)="createEntry(list.value)">
   
 
