@@ -6,6 +6,7 @@ import { Http } from '@angular/http';
 export class EntryService {
   BASE_URL: string = 'http://localhost:3000';
   entries : any;
+  entry: any;
 
   constructor(public http: Http) { }
   
@@ -35,7 +36,6 @@ export class EntryService {
 
   //DELETE ENTRY
   removeEntry(id) {
-    console.log(id)
     return this.http.delete(`${this.BASE_URL}/api/entry/${id}`)
       .map((res) => res.json());
   }

@@ -32,7 +32,6 @@ export class AddEntryComponent implements OnInit {
   }
   
   createEntry(list) {
-    console.log(list)
     this.newEntry.listId = list;
     this.entryService.createEntry(this.newEntry).subscribe(()=> {
       this.newEntry = {url:"", titleFile:"", comment:""};

@@ -1,17 +1,29 @@
 <!DOCTYPE html>
-<h1> Later... </h1>
+<h1 id = "later"> Later... </h1>
 <div *ngIf="!sessionService.user">
 
   <app-login-form></app-login-form>
-  <h2>You're not logged in!</h2>
+
 </div>
 
 <div *ngIf="sessionService.user">
 
-  <button (click)="sessionService.logout().subscribe()"> Logout </button>
-  <p>Welcome, {{sessionService.user.username}}</p>
-  <p>ID {{sessionService.user._id}}</p>
+  <div class="row dashboard-main-content-wrapper">
+      <div class="col-9 ">
+          
 
+      </div>
+      
+      <div class="col-2 ">
+          <p>Welcome, {{sessionService.user.username}}</p>
+
+      </div>
+      <div class="col-1 ">
+          <button (click)="sessionService.logout().subscribe()"> Logout </button>
+      </div>
+
+
+  </div>
 
   <div class="row dashboard-main-content-wrapper">
     <div class="col-5 my-border">
@@ -47,11 +59,11 @@
 
   <div class="row">
     <div class="col-12">
-        <h2>TAKE A LOOK!</h2>
+        <h2 id="takeALook">TAKE A LOOK!</h2>
 
       <!-- SCREEN -->
       <app-screen></app-screen>
-      <app-map></app-map>
+      <!-- <app-map></app-map> -->
 
     </div>
   </div>

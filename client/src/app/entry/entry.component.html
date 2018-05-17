@@ -7,7 +7,7 @@
   <p>Lista: {{entry.listId}}</p>
   <p>Entrada: {{entry._id}}</p>
   <a href = "{{entry.url}}" target="_blank"><input class = "btn-success" type="submit" value="OPEN"></a>
-  <input class = "btn-info" type="submit" value="PREVIEW" (click)="getPreview(entry._id)">
+  <input class = "btn-info" type="submit" value="PREVIEW" (click)="getEntry(entry._id)">
   <input class = "btn-danger" type="submit" value="DELETE" (click)="removeEntry(entry._id)">
 
 </div>

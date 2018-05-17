@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<div id="screen">
- SCREEN
- <!--  <embed src="http://www.nationalgeographic.com.au/animals/australias-shark-infested-golf-course.aspx" style="width:1000px; height: 600px;">
-  -->   
 
-
-
+<div class="entry" *ngFor="let entry of entryService.entries" id="screen">
+    <p>SCREEN</p>
+ <p>{{entry._id}}</p>
+  <p>{{entry.url}}</p>
+  <embed src="{{entry.url}}" style="width:500px; height: 500px;">   
+ 
 </div>
+
+
 

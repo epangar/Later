@@ -24,6 +24,16 @@ export class EntryComponent implements OnInit {
     
   }
 
+
+//GET A SINGLE ENTRY (PREVIEW)
+
+  getEntry(id) {
+    this.entryService.getEntry(id).subscribe(p => {
+      this.entryService.entry = p;
+      console.log("ENTRADA "+id);
+    });
+  }
+
   //DELETE ENTRY
    removeEntry(id) {
     this.listId = this.entryService.entries[0].listId;
