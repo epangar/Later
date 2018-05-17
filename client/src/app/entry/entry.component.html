@@ -3,10 +3,10 @@
 <div class="entries" *ngFor="let entry of entryService.entries" id="entries">
   <strong><h4>{{entry.titleFile}}</h4></strong>
   <p>{{entry.comment}}</p>
-  <p>Lista: {{entry.listId}}</p>
-  <p>Entrada: {{entry._id}}</p>
-  <a href = "{{entry.url}}" target="_blank"><input class = "btn btn-success" type="submit" value="OPEN"></a>
-  <input class = "btn btn-info" type="submit" value="PREVIEW" (click)="getEntry(entry._id)">
-  <input class = "btn btn-danger" type="submit" value="DELETE" (click)="removeEntry(entry._id)">
+  <p>{{entry._id}}</p>
+
+  <a href = "{{entry.url}}" target="_blank"><input class = "btn-sm btn-success" type="submit" value="OPEN"></a>
+  <input class = "btn-sm btn-info" type="submit" value="PREVIEW" (click)="getEntry(entry._id)">
+  <input class = "btn-sm btn-danger" type="submit" value="DELETE" (click)="removeEntry(entry._id)">
 
 </div>

@@ -37,13 +37,13 @@ export class MapComponent implements OnInit {
 
     var mapProp = {
       center: new google.maps.LatLng(40.3900552, -3.6959172),
-      zoom: 15,
+      zoom: 10,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
 
 
-    /*PINTAR EL PUNTERO
+    /*PINTAR EL PUNTERO / Centrar
     
   function getCoord(url) {
   

@@ -7,6 +7,7 @@ export class EntryService {
   BASE_URL: string = 'http://localhost:3000';
   entries : any;
   entry: any;
+  preview: any;
 
   constructor(public http: Http) { }
   

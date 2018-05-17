@@ -6,12 +6,11 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-entry',
   templateUrl: './entry.component.html',
-  styleUrls: ['./entry.component.css'],
-  template: `<iframe [src]="url"></iframe>`
+  styleUrls: ['./entry.component.css']
 })
 export class EntryComponent implements OnInit {
   listId;
-  url = this.entryService.entry.url;
+  clicked: boolean = false;
 
   constructor(
     public sessionService: SessionService, 
@@ -23,16 +22,21 @@ export class EntryComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    //this.newEntry = {url:"", titleFile:"", comment:""};
+
   }
 
 
 //GET A SINGLE ENTRY (PREVIEW)
 
   getEntry(id) {
+    console.log(this.clicked)
+    this.clicked = true;
     this.entryService.getEntry(id).subscribe(p => {
-      this.entryService.entry = p;
+      this.entryService.preview = p;
       console.log("ENTRADA "+id);
+      this.clicked = false;
+
     });
   }
 

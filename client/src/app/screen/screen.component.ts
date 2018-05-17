@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ScreenComponent implements OnInit {
   entry: any;
+  clicked: boolean = false;
 
   constructor(
     public sessionService: SessionService, 
@@ -17,6 +18,19 @@ export class ScreenComponent implements OnInit {
     public router: Router) { }
 
   ngOnInit() {
+  }
+
+  getEntry(id) {
+    this.clicked = true;
+    this.entryService.getEntry(id).subscribe(p => {
+      this.entryService.preview = p;
+      console.log("ENTRADA "+id);
+    });
+  }
+  
+
+
+
   }
 
 
