@@ -42,6 +42,11 @@ export class ListComponent implements OnInit {
   getEntries(id) {
     this.entryService.getListOfEntries(id).subscribe(p => {
       this.entryService.entries = p});
+      this.sessionService.userEvent.subscribe(l => {
+        this.entries = l;
+        //this.lists2.shift();
+      })
+
   }
 
   //DELETE LIST

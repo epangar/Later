@@ -12,8 +12,10 @@ import {} from "@types/googlemaps";
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
+  entry: any;
+  
 
-  constructor(public sessionService: SessionService, public router: Router) { }
+  constructor(public sessionService: SessionService, public entryService: EntryService, public router: Router) { }
 
   @ViewChild("gmap") gmapElement: any;
   map: google.maps.Map;
@@ -36,15 +38,11 @@ export class MapComponent implements OnInit {
 
     })
 
-    var mapProp = {
-      center: new google.maps.LatLng(40.3900552, -3.6959172),
-      zoom: 10,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
 
 
-    /*OBTENER LATITUD Y LONGITUD DE LA URL
+/*    
+     
+    var url = this.entryService.entry.url;
     
   function getCoord(url) {
   
@@ -56,12 +54,16 @@ export class MapComponent implements OnInit {
   var lng = coords[1]; // 80.2238546
 
   return [lat,lng]
-}
-*/ 
-    
+} */
 
-  
 
+
+var mapProp = {
+  center: new google.maps.LatLng(40.4169473,-3.7057172),
+  zoom: 10,
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+};
+this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
 
   }
 }

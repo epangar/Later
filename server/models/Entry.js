@@ -12,6 +12,7 @@ const entrySchema = new Schema(
     },
     titleFile: String, //Title
     comment: String,
+    image: String,
     whichType: {
       type: String,
       enum: ["web", "article", "video", "image", "place", "random","other"]

@@ -9,6 +9,7 @@ import { environment } from '../../environments/environment';
 export class SessionService {
 
   user:any;
+  entries: Array<any> =[];
   userEvent: EventEmitter<any> = new EventEmitter();
   options: any = { withCredentials:true };
 
@@ -42,7 +43,9 @@ export class SessionService {
 
   logout() {
     return this.http.get(`${environment.BASEURL}/api/auth/logout`,this.options)
-      .map(() => this.handleUser())
+      .map(() => {
+        this.handleUser()
+      })
       .catch(this.handleError);
   }
 

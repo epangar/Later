@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { SessionService } from "../services/session.service";
 
+
 @Component({
   selector: "app-login-form",
   templateUrl: "./login-form.component.html",
@@ -16,6 +17,7 @@ export class LoginFormComponent implements OnInit {
   ngOnInit() {}
 
   login() {
+    
     console.log(this.username, this.password);
     this.sessionService.login(this.username, this.password).subscribe();
   }

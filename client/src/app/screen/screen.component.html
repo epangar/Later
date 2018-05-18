@@ -2,10 +2,11 @@
 
 <!-- <div *ngIf = "clicked"> -->
   <div class="entry" id="screen">
-    <p>SCREEN</p>
-    <p>{{entryService.preview|json}}</p>
-    <p>{{entryService.preview._id}}</p>
-    <p>"{{entryService.preview.url}}"</p>
+    <!-- <p>{{entryService.preview|json}}</p> -->
+    <p>{{entryService.preview.titleFile}}</p>
+    <p>{{entryService.preview.comment}}</p>
+    <p>{{entryService.preview.url}}</p>
+    <img src={{entryService.preview.image}}>
 
 <!--     <iframe src="entryService.preview.url"></iframe>
  -->

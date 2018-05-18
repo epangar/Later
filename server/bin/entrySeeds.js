@@ -12,6 +12,7 @@ const entries = [
     url: 'https://www.youtube.com/watch?v=w4Setx7VNzw',
     titleFile: 'Receta de tarta de queso', 
     comment: 'Zenchy explica cómo hacer una tarta de queso',
+    image: 'https://www.okokorecepten.nl/i/recepten/kookboeken/2008/hoe-word-ik-een-goddelijke-huisvrouw/nigella-lawson-cheesecake-500.jpg',
     whichType: 'video',
     
   },
@@ -27,6 +28,7 @@ const entries = [
     url: 'https://es.wikipedia.org/wiki/Tardigrada',
     titleFile: 'Tardígrados', 
     comment: 'Artículo de Wikipedia sobre los tardígrados',
+    image: 'https://i.kinja-img.com/gawker-media/image/upload/s--tRukLYFX--/c_scale,f_auto,fl_progressive,q_80,w_800/iir7qj3vsqqcoluaujoz.jpg',
     whichType: 'article',    
   },
   {
@@ -41,6 +43,7 @@ const entries = [
     url: 'https://www.theonion.com/flu-vaccine-recalled-due-to-defective-government-tracki-1825854033',
     titleFile: '', 
     comment: '',
+    image: 'http://artvallejo.org/wp-content/uploads/2015/08/11855849_926704674062382_6682117574380298622_n-500x375.jpg',
     whichType: 'article',    
   },
   {

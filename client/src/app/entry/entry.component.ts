@@ -18,11 +18,12 @@ export class EntryComponent implements OnInit {
     public router: Router) { 
     if (!this.sessionService.user) {
       this.router.navigate(['']);
-    }    
+    }
+
   }
 
   ngOnInit() {
-    //this.newEntry = {url:"", titleFile:"", comment:""};
+    this.entryService.entries = [];
 
   }
 
@@ -30,11 +31,9 @@ export class EntryComponent implements OnInit {
 //GET A SINGLE ENTRY (PREVIEW)
 
   getEntry(id) {
-    console.log(this.clicked)
     this.clicked = true;
     this.entryService.getEntry(id).subscribe(p => {
       this.entryService.preview = p;
-      console.log("ENTRADA "+id);
       this.clicked = false;
 
     });

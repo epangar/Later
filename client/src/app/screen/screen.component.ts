@@ -26,11 +26,8 @@ export class ScreenComponent implements OnInit {
       this.entryService.preview = p;
     });
   }
-  
-
-
 
   }
 
 
-}
+

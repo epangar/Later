@@ -2,8 +2,8 @@
 <div class="lists" *ngFor="let list of lists" id="list">
   <h3>{{list.title}}</h3>
   <p>{{list.comment}}</p>
-  <input class = "btn btn-success" type="submit" value="OPEN" (click)="getEntries(list._id)">
-  <input class = "btn btn-danger" type="submit" value="DELETE" (click)="removeList(list._id)">
+  <input class = "btn-sm btn-success" type="submit" value="OPEN" (click)="getEntries(list._id)">
+  <input class = "btn-sm btn-danger" type="submit" value="DELETE" (click)="removeList(list._id)">
 
 </div>
 
