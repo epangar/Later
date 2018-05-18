@@ -3,14 +3,13 @@
 <!-- <div *ngIf = "clicked"> -->
   <div class="entry" id="screen">
     <!-- <p>{{entryService.preview|json}}</p> -->
-    <p>{{entryService.preview.titleFile}}</p>
+    <a href="{{entryService.preview.url}}"> "{{entryService.preview.titleFile}}"</a>
     <p>{{entryService.preview.comment}}</p>
-    <p>{{entryService.preview.url}}</p>
+
     <img src={{entryService.preview.image}}>
 
-<!--     <iframe src="entryService.preview.url"></iframe>
- -->
+  <iframe src={{entryService.entry.url}} height="400" width="400"></iframe>
+ 
 
- <embed src="{{entryService.preview.url}}" style="width:500px; height: 300px;">
-  </div>
+   </div>
 <!-- </div> -->
