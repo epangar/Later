@@ -1,7 +1,6 @@
 /*Elements*/
 
 
-
 /*Classes*/
 
 .my-border {
@@ -34,4 +33,9 @@
 #screen {
   height:300px;
   width: auto;
+}
+
+#cabecera {
+  padding: 10px;
+
 }

@@ -40,7 +40,8 @@ import { AngularGooglePlaceModule } from 'angular-google-place';
     FormsModule,
     AngularGooglePlaceModule
     /* AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAqeqDva_640tpKEI6fZWMMBd0JpOiogkw'
+      apiKey: ---
+      
     }) */
   ],
   providers: [SessionService, ListService, EntryService],
