@@ -11,7 +11,6 @@ import { SessionService } from '../services/session.service';
 export class AddEntryComponent implements OnInit {
   newEntry: any = {url:"", titleFile:"", comment:""};
   lists: Array<any> = [];
-  //lists2: Array<any> = [];
 
 
   constructor(public entryService: EntryService, public listService: ListService, public sessionService: SessionService) { 
@@ -20,14 +19,12 @@ export class AddEntryComponent implements OnInit {
     });
     this.listService.listEvent.subscribe(l => {
       this.lists = l;
-      //this.lists2.shift();
     })
   }
 
   ngOnInit() {
     this.listService.getMyLists(this.sessionService.user._id).subscribe(q => {
       this.lists = q;
-      //this.lists2.shift();
     });
   }
   
